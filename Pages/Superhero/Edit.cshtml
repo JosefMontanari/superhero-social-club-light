@@ -2,3 +2,21 @@
 @model SuperHeroSocialClubLight.Pages.Superhero.EditModel
 @{
 }
+
+<form method="post">
+
+	<label>Name: </label>
+	<input type="text" placeholder="Name" asp-for="@Model.Name" />
+		
+	<label>Secret identity: </label>
+	<input type="text" placeholder="Name" asp-for="@Model.SecretIdentity" />
+		
+	<label>Super powers</label>
+	<input type="Text" placeholder="Super power" asp-for="@Model.SuperPowers" />
+		<input type="Text" placeholder="Super power" asp-for="@Model.SuperPowers" />
+	<input type="Text" placeholder="Super power" asp-for="@Model.SuperPowers" />
+	<input type="Text" placeholder="Super power" asp-for="@Model.SuperPowers" />
+
+	<input class="btn btn-primary" type="submit" value="Edit Superhero" />
+
+</form>
