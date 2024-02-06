@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SuperHeroSocialClubLight.Pages.Shared.Superhero
+namespace SuperHeroSocialClubLight.Pages.Superhero
 {
-    public class EditModel : PageModel
+    public class SuperheroesModel : PageModel
     {
         public void OnGet()
         {

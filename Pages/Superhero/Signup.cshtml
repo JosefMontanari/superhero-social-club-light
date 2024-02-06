@@ -1,0 +1,18 @@
+﻿@page
+@model SuperHeroSocialClubLight.Pages.Superhero.SignupModel
+@{
+}
+
+<form method="post">
+	<label>Superhero Name:</label>
+	<input type="name" placeholder="Supername" asp-for="@Model.Supername" />
+	<label>Secret identity:</label>
+	<input type="secretidentity" placeholder="SecretIdentity" asp-for="@Model.Supername" />
+	<label>Superpower:</label>
+	<input type="superpower" placeholder="Superpower" asp-for="@Model.Supername" />
+
+
+	<input class="btn btn-danger" type="submit" value="Sign up as a superhero!" />
+
+
+</form>
