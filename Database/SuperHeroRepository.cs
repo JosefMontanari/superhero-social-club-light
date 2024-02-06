@@ -2,7 +2,7 @@
 
 namespace SuperHeroSocialClubLight.Database
 {
-	public static class SuperHeroRepository
+	public class SuperHeroRepository
 	{
 		public static List<SuperHero> SuperHeros { get; set; } = new List<SuperHero>{
 
@@ -13,5 +13,56 @@ namespace SuperHeroSocialClubLight.Database
 			new SuperHero(5, "Captain America", "Steve Rogers", "Super strength", "Shield mastery", "Peak human agility")
 
 			};
+		public void AddSuperHero(SuperHero superHero)
+		{
+			SuperHeros.Add(superHero);
+		}
+
+		public bool RemoveSuperHero(int id)
+		{
+			// Returnerar en bool så vi vet om den tar bort en superhjälte eller ej
+
+			SuperHero superHeroToRemove = SuperHeros.FirstOrDefault(x => x.Id == id);
+			if (superHeroToRemove != null)
+			{
+				SuperHeros.Remove(superHeroToRemove);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+
+		public bool UpdateSuperHero(int id, SuperHero superHero)
+		{
+			// Kolla så det finns en superhero med det id
+			SuperHero superHeroToUpdate = SuperHeros.FirstOrDefault(superHero => superHero.Id == id);
+			if (superHeroToUpdate != null)
+			{
+
+				// Kolla så att superhjälten man skickat med inte är null
+				if (superHero != null)
+				{
+					// Om allt är korrekt så adderas hjälten och den gamla tas bort
+					SuperHeros.Remove(superHeroToUpdate);
+					SuperHeros.Add(superHero);
+
+					return true;
+
+				}
+
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
+
 }
