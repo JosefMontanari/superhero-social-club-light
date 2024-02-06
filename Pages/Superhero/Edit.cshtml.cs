@@ -8,26 +8,29 @@ namespace SuperHeroSocialClubLight.Pages.Superhero
 
 	public class EditModel : PageModel
 	{
-		public int Id { get; set; }
+
 		[BindProperty]
-		public string Name { get; set; }
+		public string? Name { get; set; }
 		[BindProperty]
-		public string SecretIdentity { get; set; }
+		public string? SecretIdentity { get; set; }
 		[BindProperty]
 		public List<string>? SuperPowers { get; set; }
 
-
+		public SuperHero? Hero { get; set; }
 		public void OnGet(int id)
 		{
-			Id = id;
+			Hero = SuperHeroRepository.SuperHeros.FirstOrDefault(h => h.Id == id);
+
 		}
 
 		public void OnPost()
 		{
-			int id = SuperHeroRepository.SuperHeros.Count + 1;
-			SuperHero superHero = new SuperHero(id, Name, SecretIdentity, SuperPowers.ToString());
+
+			int idHero = SuperHeroRepository.SuperHeros.Count + 1;
+			SuperHero? superHero = new SuperHero(idHero, Name, SecretIdentity, SuperPowers.ToString());
 			SuperHeroRepository superHeroRepository = new SuperHeroRepository();
-			superHeroRepository.UpdateSuperHero(Id, superHero);
+			superHeroRepository.UpdateSuperHero(Hero.Id, superHero);
+
 		}
 	}
 }
