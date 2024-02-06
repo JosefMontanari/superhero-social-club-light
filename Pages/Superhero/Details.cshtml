@@ -2,3 +2,21 @@
 @model SuperHeroSocialClubLight.Pages.Superhero.DetailsModel
 @{
 }
+
+@if (Model.Superhero != null)
+{
+	<h1>@Model.Superhero.Name</h1>
+	<h1>@Model.Superhero.SecretIdentity</h1>
+@foreach(var superpower in Model.Superhero.SuperPowers)
+	{
+		<h1>@superpower</h1>
+	}
+
+
+
+
+}
+else
+{
+	<h1>???</h1>
+}
