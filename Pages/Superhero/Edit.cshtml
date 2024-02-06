@@ -3,19 +3,21 @@
 @{
 }
 
-<form method="post">
-
+<form method="Post">
+	
+@* 	<label>Id: </label>
+	<input type="text" placeholder="@Model.id" asp-for="@Model.id" /> *@
 	<label>Name: </label>
-	<input type="text" placeholder="Name" asp-for="@Model.Name" />
+	<input type="text" placeholder="@Model.Name" asp-for="@Model.Name" />
 		
 	<label>Secret identity: </label>
-	<input type="text" placeholder="Name" asp-for="@Model.SecretIdentity" />
+	<input type="text" placeholder="@Model.SecretIdentity" asp-for="@Model.SecretIdentity" />
 		
 	<label>Super powers</label>
-	<input type="Text" placeholder="Super power" asp-for="@Model.SuperPowers" />
-		<input type="Text" placeholder="Super power" asp-for="@Model.SuperPowers" />
-	<input type="Text" placeholder="Super power" asp-for="@Model.SuperPowers" />
-	<input type="Text" placeholder="Super power" asp-for="@Model.SuperPowers" />
+	<input type="Text" placeholder="" asp-for="@Model.SuperPowers[0]" />
+	<input type="Text" placeholder="" asp-for="@Model.SuperPowers[1]" />
+	<input type="Text" placeholder="" asp-for="@Model.SuperPowers[2]" />
+	<input type="Text" placeholder="" asp-for="@Model.SuperPowers[3]" />
 
 	<input class="btn btn-primary" type="submit" value="Edit Superhero" />
 
