@@ -2,25 +2,15 @@
 @model SuperHeroSocialClubLight.Pages.Superhero.SuperheroesModel
 @{
 }
-<!-- Show all superheroes -->
+
+
+@foreach (var s in Model.Superheroes)
+{
+	<a asp-page="/Superhero/Details" asp-route-id="@s.Id">
+		<h1>@s.Name</h1>
+		<img src="/img/@s.Img"/>
 
 
 
-
-<!-- ID -->
-<a asp-route-id="@Superhero.Id"
-
-<!-- Superhero name -->
-
-asp-route-superheroname="@Superhero.Name"
-
-<!-- Secret Identity -->
-
-asp-route-secretidentity="@Superhero.identity"
-
-<!-- Superpower -->
-
-asp-route-superpower="@Superhero.superpower"
-
-
-</a>
+	</a>
+}
