@@ -13,7 +13,7 @@ namespace SuperHeroSocialClubLight.Database
 			new SuperHero(5, "Captain America", "Steve Rogers", "Super strength", "Shield mastery", "Peak human agility")
 
 			};
-		public void AddSuperHero(SuperHero superHero)
+		public void AddSuperHero(int id, SuperHero superHero)
 		{
 			SuperHeros.Add(superHero);
 		}
