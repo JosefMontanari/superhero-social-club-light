@@ -46,8 +46,8 @@ namespace SuperHeroSocialClubLight.Database
 				if (superHero != null)
 				{
 					// Om allt är korrekt så adderas hjälten och den gamla tas bort
-					SuperHeros.Remove(superHeroToUpdate);
 					SuperHeros.Add(superHero);
+					SuperHeros.Remove(superHeroToUpdate);
 
 					return true;
 
