@@ -2,7 +2,7 @@
 
 namespace SuperHeroSocialClubLight.Database
 {
-	public class SuperHeroRepository
+	public static class SuperHeroRepository
 	{
 		public static List<SuperHero> SuperHeros { get; set; } = new List<SuperHero>{
 
@@ -13,12 +13,12 @@ namespace SuperHeroSocialClubLight.Database
 			new SuperHero(5, "Captain America", "Steve Rogers", "Super strength", "Shield mastery", "Peak human agility")
 
 			};
-		public void AddSuperHero(SuperHero superHero)
+		public static void AddSuperHero(SuperHero superHero)
 		{
 			SuperHeros.Add(superHero);
 		}
 
-		public bool RemoveSuperHero(int id)
+		public static bool RemoveSuperHero(int id)
 		{
 			// Returnerar en bool så vi vet om den tar bort en superhjälte eller ej
 
@@ -35,7 +35,19 @@ namespace SuperHeroSocialClubLight.Database
 
 		}
 
-		public bool UpdateSuperHero(int id, SuperHero superHero)
+		public static void AddSuperPowers(List<string> powers, SuperHero superHero)
+		{
+			foreach (string pow in powers)
+			{
+				if (!string.IsNullOrEmpty(pow))
+				{
+					superHero.SuperPowers.Add(pow);
+				}
+
+			}
+		}
+
+		public static bool UpdateSuperHero(int id, SuperHero superHero)
 		{
 			// Kolla så det finns en superhero med det id
 			SuperHero superHeroToUpdate = SuperHeros.FirstOrDefault(superHero => superHero.Id == id);

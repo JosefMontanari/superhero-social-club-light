@@ -17,8 +17,8 @@ namespace SuperHeroSocialClubLight.Pages.Superhero
 		[BindProperty]
 		public int id { get; set; }
 
-		//[BindProperty]
-		//public List<string>? SuperPowers { get; set; }
+		[BindProperty]
+		public List<string>? SuperPowers { get; set; }
 
 		public void OnGet(int id)
 		{
@@ -31,10 +31,10 @@ namespace SuperHeroSocialClubLight.Pages.Superhero
 
 		public void OnPost()
 		{
-			int idHero = SuperHeroRepository.SuperHeros.Count + 1;
-			SuperHero? superHero = new SuperHero(idHero, Name, SecretIdentity/*, SuperPowers.ToString()*/);
-			SuperHeroRepository superHeroRepository = new SuperHeroRepository();
-			superHeroRepository.UpdateSuperHero(Hero.Id, superHero);
+			SuperHero? superHero = new SuperHero(id, Name, SecretIdentity);
+			SuperHeroRepository.AddSuperPowers(SuperPowers, superHero);
+			SuperHeroRepository.UpdateSuperHero(id, superHero);
+
 
 		}
 	}
