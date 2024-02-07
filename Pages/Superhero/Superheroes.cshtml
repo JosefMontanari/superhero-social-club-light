@@ -2,9 +2,12 @@
 @model SuperHeroSocialClubLight.Pages.Superhero.SuperheroesModel
 @{
 }
+<a asp-page="/Superhero/Signup/">
+	<input class="btn btn-danger" type="submit" value="Sign up as a superhero!" />
+</a>
 
 <h1>OUR HEROES</h1>
-<input class="btn btn-danger" type="submit" asp-route-page="/Superhero/Signup/" value="Sign up as a superhero!" />
+
 
 
 @foreach (var s in Model.Superheroes)
